@@ -13,7 +13,7 @@ from calibre.customize import StoreBase
 class JernejStore(StoreBase):
     name = 'COPS server store'
     description = 'Store connected to COPS server'
-    version = (0, 0, 1)
+    version = (0, 0, 2)
     actual_plugin = 'calibre_plugins.cops_store.plugin:CopsStorePlugin'
     author = 'Blaz Kranjc'
 
