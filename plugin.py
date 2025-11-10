@@ -128,8 +128,12 @@ class CopsStorePlugin(BasicStoreConfig, StorePlugin):
                 self._b.addheaders = [("Authorization", f"Basic {auth}")]
             else:
                 self._b.addheaders = []
+            self._b.addheaders.append(("User-Agent", "Calibre COPS Store Plugin"))
             self._updateBrowser = False
         return self._b
+    
+    def create_browser(self):
+        return self.browser()
 
     def config_widget(self):
         return ConfigWidget(self.config)
@@ -165,4 +169,3 @@ class CopsStorePlugin(BasicStoreConfig, StorePlugin):
 
             yield book
             count += 1
-
